@@ -1,0 +1,5 @@
+curl -X POST -H "Content-Type: application/json" -d "{\"firstName\":\"Alireza\", \"lastName\":\"Khamesipour\",\"email\":\"rezakhamesipour@gmail.com\",\"username\":\"rezakhamesipour\",\"password\":\"7392Khamesipour\"}" localhost:3000/users
+
+curl -X PUT -H "Content-Type:application/json" -d "{\"lastName\": \"Khamesi\"}" localhost:3000/users/5978bc5af884a72338555c25
+
+curl -X DELETE localhost:3000/users/5978bc5af884a72338555c25
