@@ -1,0 +1,68 @@
+<head>
+<link rel="stylesheet" href="create.template.css">
+</head>
+<h1 style="color: #650000;">New Student Information Request Form</h1>
+<img src="http://asset.siu.edu/common_images/administrative-slider-banner/banner_admis.jpg" style="height: 425px; width: 820px"/>
+<p><b>Information systems technologies</b> is a major designed to prepare students for careers in a wide variety of work settings that rely on information technology to accomplish organizational goals. The curriculum recognizes graduates must have good computer application skills as well as an understanding of the principles of organizations and systems, including an awareness of technological, economic, political, social and cultural factors. Many courses require significant hands-on computer activities related to applications software, networking communications, and computer troubleshooting and maintenance. Students may also choose five courses from an approved list to reflect their personal interests in information systems technologies.</p>
+<h2>Have Questions?</h2>
+<form (ngSubmit)="create()" novalidate>
+    
+
+    <table style="border: 3px solid #650000; padding: 10px; border-radius: 5px;">
+    <tr>
+        <td><label for="fname">First Name<span style="color:#FE7571; padding: 0px;">*</span></label></td>
+        <td><input type="text" required [(ngModel)]="test.fname" name="fname" placeholder="First Name"></td>
+    </tr>
+    <tr>
+        <td><label for="lname">Last Name<span style="color:#FE7571; padding: 0px;">*</span></label></td>
+        <td><input type="text" required [(ngModel)]="test.lname" name="lname" placeholder="Last Name"></td>
+    </tr>
+    <tr>
+        <td><label for="email">Email<span style="color:#FE7571; padding: 0px;">*</span></label></td>
+        <td><input type="text" required [(ngModel)]="test.email" name="email" placeholder="Email"></td>   
+    </tr>
+    <tr>
+        <td><label for="phone">Phone Number</label></td>
+        <td><input type="phone" required [(ngModel)]="test.phone" name="phone" placeholder="ex: (123)-456-7890"></td>
+    </tr>
+    <tr>
+        <td><label for="program">Program<span style="color:#FE7571; padding: 0px;">*</span></label></td>
+		<td><div class="select-div">
+			<select name="program" required [(ngModel)]="test.program">
+			  <option value="Please Select a Program" selected="selected">Please Select a Program</option>
+			  <option value="Online Program">Online Program</option>
+			  <option value="On-campus Program">On-campus Program</option>
+			</select>
+		</div></td>
+    </tr>
+    <tr>
+        <td><label for="term">Term<span style="color:#FE7571; padding: 0px;">*</span></label></td>
+		<td><div class="select-div">
+			<select name="term" required [(ngModel)]="test.term">
+			  <option value="Please Select a Term" selected="selected">Please Select a Term</option>
+			  <option value="Spring 2018">Spring 2018</option>
+			  <option value="Summer 2018">Summer 2018</option>
+			  <option value="Fall 2018">Fall 2018</option>
+			  <option value="Spring 2019">Spring 2019</option>
+			</select>
+		</div></td>
+    </tr>
+    <tr>
+        <td><label for="information">
+            Provide us<br> 
+            with any<br> 
+            further information<br> 
+            you think<br> 
+            may be important</label></td>
+        <td><textarea type="text" required cols="30" rows="10" [(ngModel)]="test.information" name="information" placeholder="More Information"></textarea></td>
+    </tr>
+    <tr>
+      
+    </tr>
+    </table>
+	<div>
+        <br><button type="reset" value="Reset"style="background-color: black; color: white; padding: 5px; border-radius: 5px;margin-right: 247px;">Clear Form</button>
+		<button type="submit" value="submit" style="background-color: #660000; color: white; padding: 5px; border-radius: 5px;">Submit</button>	
+    </div>
+    <strong id="error">{{errorMessage}}</strong>
+</form>

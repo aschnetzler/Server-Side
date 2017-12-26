@@ -1,0 +1,20 @@
+<h1>Sign In</h1>
+<form (ngSubmit)="signin()">
+    <table style="border: 3px solid #650000; padding: 10px; border-radius: 5px;">
+        <tr>
+            <td><label>Username:</label></td>
+            <td><input type="text" [(ngModel)]="credentials.username" name="username"></td>
+        </tr>
+    <tr>
+            <td><label>Password:</label></td>
+            <td><input type="password" [(ngModel)]="credentials.password"
+    name="password"></td>
+            </tr>
+            <tr><td></td></tr>
+    <tr>
+        <td></td>
+            <td><button style="background-color: #660000; color: white; padding: 5px; border-radius: 5px;" input type="submit"> Sign In </button></td>
+    </tr>
+    <span>{{errorMessage}}</span>
+    </table>
+    </form>

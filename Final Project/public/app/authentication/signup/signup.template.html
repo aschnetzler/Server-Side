@@ -1,0 +1,31 @@
+<h1>Sign Up</h1>
+<form (ngSubmit)="signup()">
+    <table style="border: 3px solid #650000; padding: 10px; border-radius: 5px;">
+        <tr>
+            <td><label>First Name:</label></td>
+            <td><input type="text" [(ngModel)]="user.firstName" name="firstName"></td>
+        </tr>
+        <tr>
+            <td><label>Last Name:</label></td>
+            <td><input type="text" [(ngModel)]="user.lastName" name="lastName"></td>
+        </tr>
+    <tr>
+        <td><label>Email:</label></td>
+        <td><input type="text" [(ngModel)]="user.email" name="email"></td>
+    </tr>
+    <tr>
+        <td><label>Username:</label></td>
+        <td><input type="text" [(ngModel)]="user.username" name="username"></td>
+    </tr>
+    <tr>
+            <td><label>Password:</label></td>
+                <td><input type="password" [(ngModel)]="user.password" name="password"></td>
+    </tr>
+    <tr><td><br></td></tr>
+    <tr>
+        <td></td>
+            <td><button input type="signup" style="background-color: black; color: white; padding: 5px; border-radius: 5px;" input type="submit"> Sign Up </button></td>
+    </tr>
+    <span>{{errorMessage}}</span>
+    </table>
+</form>

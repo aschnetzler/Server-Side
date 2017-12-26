@@ -1,0 +1,25 @@
+<head>
+        <link rel="stylesheet" href="home.template.css">
+        </head>
+<div *ngIf="user">
+    <h1 style="color: #650000;">Welcome back, {{user.firstName}}!</h1>
+    <img src="http://siu.edu/_assets/images/siu-pulliam-clocktower.jpg" style="height: 425px; width: 720px;"/>
+    <ul>
+        <li><a [routerLink]="['/test']">List Requests</a></li>
+        <li><a [routerLink]="['/test/create']">Request Program Information</a></li><br>
+        <a href="/api/auth/signout"><button input type="signout" style="background-color: #660000; color: white; padding: 5px; border-radius: 5px;">Sign Out</button></a>
+    </ul>
+</div>
+<div *ngIf="!user">
+        <h1 style="color: #650000;">Welcome to the Information Systems Technology Student Webpage!</h1> 
+        <img src="http://siu.edu/_assets/images/siu-pulliam-clocktower.jpg" style="height: 500px; width: 920px;"/>
+        <p>If you are a new student you can request information on the program or create an account.<br> If you already have an account you can sign in.</p>  
+        
+        <table>
+            
+            <tr><td><a [routerLink]="['/test/create']">Request Program Information</a><br><br></td></tr>
+    <tr>
+        <td><span style="padding-right: 78px;"><a [routerLink]="['/authentication/signup']"><button input type="signup" style="background-color: black; color: white; padding: 5px; border-radius: 5px;">Sign Up</button></a></span>
+    <a [routerLink]="['/authentication/signin']"><button input type="signin" style="background-color: #660000; color: white; padding: 5px; border-radius: 5px;">Sign In</button></a></td>
+</table>
+</div>

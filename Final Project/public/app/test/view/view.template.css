@@ -1,0 +1,15 @@
+a:link
+{
+    color: #650000;
+    text-decoration: none;
+}
+a:visited
+{
+    color: black;
+    font-style: italic;
+}
+a:hover
+{
+    font-weight: bold;
+    text-decoration: underline
+}

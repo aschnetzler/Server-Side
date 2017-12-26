@@ -1,0 +1,60 @@
+<head>
+<link rel="stylesheet" href="list.template.css">
+</head>
+<h1>List of Requests</h1>
+    <ul *ngFor="let test of test">
+        <table>
+        <tr>
+            <td>
+                <h2>
+                    <a [routerLink]="['/test', test._id]">{{test.fname}} {{test.lname}}</a>
+                </h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>Created On: {{test.created}}</h3>
+            </td>
+        </tr> 
+</table>
+<table style="border: 3px solid #650000; padding: 10px; border-radius: 5px;">		
+        <tr>
+            <td>
+                Email:
+            </td> 
+            <td>
+                <a href="mailto:{{test.email}}">{{test.email}}</a>
+            </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone:
+                    </td>
+                    <section *ngIf = "test.phone">
+                            <a href="tel:{{test.phone}}">{{test.phone}}</a>
+                        </section>
+                        <section *ngIf = "test.phone.length === 0">
+                    Phone number not provided
+                </section>
+                </tr>
+                <tr>
+                    <td>Program:</td>
+                    <td>{{test.program}}</td>
+                </tr>
+                <tr>
+                    <td>Term:</td>
+                    <td>{{test.term}}</td>
+                </tr>
+                <tr>
+                        <td><br>Comments:<br></td>
+                </tr>
+                <tr>
+                <td>{{test.information}}</td><br><br>
+            </tr>                       
+                <tr><td><button (click)="delete()" style="background-color: #660000; color: white; padding: 5px; border-radius: 5px;">Delete</button></td></tr>
+        </table>
+
+<div *ngIf="test && test.length === 0">
+    No test yet, why don't you <a [routerLink]="['/test/
+create']">create one</a>?
+</div>
